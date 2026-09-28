@@ -108,3 +108,28 @@ p { color:var(--muted); margin:0; }
 .directory-grid .service-card { min-height:265px; }.directory-cta { display:flex; align-items:center; justify-content:space-between; gap:30px; }.directory-cta h2 { margin:16px 0 10px; max-width:600px; }.directory-cta p { max-width:560px; }.area-directory-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }.area-directory-card { display:flex; gap:18px; padding:27px; background:#fff; border:1px solid rgba(13,36,51,.08); border-radius:14px; transition:transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease); }.area-directory-card:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(13,36,51,.1); border-color:#bed7d4; }.area-card-icon { display:grid; place-items:center; flex:none; width:46px; height:46px; color:var(--teal); background:#e5f1ef; border-radius:12px; }.area-directory-card h3 { margin:8px 0 9px; }.area-directory-card p { font-size:.82rem; margin-bottom:15px; }.featured-area { background:var(--navy); border-color:var(--navy); }.featured-area h3,.featured-area .text-link { color:#fff; }.featured-area p { color:#bfd0d0; }.featured-area .area-card-icon { color:#f8ad94; background:rgba(255,255,255,.1); }
 @media (max-width: 900px) { .directory-hero-inner { grid-template-columns:1fr; gap:36px; }.directory-hero-note { max-width:430px; }.nav-dropdown { height:auto; } }
 @media (max-width: 680px) { .nav-dropdown { display:block; height:auto; }.nav-dropdown > button { width:100%; justify-content:space-between; padding:13px 0; border-bottom:1px solid #edf1f1; }.dropdown-menu { position:static; width:auto; padding:4px 0 5px 12px; border:0; border-radius:0; box-shadow:none; opacity:1; transform:none; pointer-events:auto; display:none; }.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu { display:block; }.dropdown-menu a { border-bottom:0 !important; padding:9px 0 !important; }.directory-hero { padding:55px 0; }.directory-hero h1 { font-size:2.8rem; }.area-directory-grid { grid-template-columns:1fr; }.directory-cta { display:block; }.directory-cta .btn-primary { margin-top:24px; } }
+
+.problems-section { background:#fff; }
+.problems-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:100px; align-items:start; }
+.problems-intro h2 { margin:18px 0 20px; max-width:540px; }
+.problems-intro > p { max-width:520px; margin-bottom:24px; }
+.problem-list { border-top:1px solid var(--border); }
+.problem-item { display:flex; align-items:center; gap:18px; min-height:58px; padding:12px 0; border-bottom:1px solid var(--border); color:var(--navy); }
+.problem-item span { color:var(--copper); font:800 .72rem Manrope,sans-serif; width:24px; }
+.problem-item strong { flex:1; font-size:.9rem; }
+.problem-item svg { color:var(--teal); }
+.process-section { background:var(--mist); }
+.process-home-grid { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
+.process-home-image { position:relative; }
+.process-home-image img { display:block; width:100%; height:500px; object-fit:cover; border-radius:18px; box-shadow:0 25px 60px rgba(13,36,51,.15); }
+.process-home-badge { position:absolute; left:20px; right:20px; bottom:20px; padding:20px; display:flex; flex-direction:column; gap:9px; color:#fff; background:rgba(13,36,51,.86); border-radius:11px; }
+.process-home-badge strong { max-width:340px; font:700 1.1rem/1.25 Manrope,sans-serif; }
+.process-home-copy h2 { margin:18px 0 20px; }
+.process-home-copy > p { max-width:560px; }
+.home-steps { margin:30px 0 27px; border-top:1px solid #d4e2e0; }
+.home-steps > div { display:flex; gap:18px; padding:18px 0; border-bottom:1px solid #d4e2e0; }
+.home-steps b { color:var(--copper); font:800 .74rem Manrope,sans-serif; }
+.home-steps h3 { font-size:1rem; margin-bottom:4px; }
+.home-steps p { font-size:.8rem; }
+@media (max-width:900px) { .problems-grid,.process-home-grid { grid-template-columns:1fr; gap:45px; } }
+@media (max-width:680px) { .problems-grid,.process-home-grid { gap:32px; }.process-home-image img { height:370px; }.problem-item { min-height:52px; }.problem-item strong { font-size:.82rem; } }
