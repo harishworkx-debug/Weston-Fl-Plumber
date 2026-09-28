@@ -1,0 +1,41 @@
+.credentials-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+.credentials-inner {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cred-icon {
+  color: var(--primary);
+}
+.cred-item div {
+  display: flex;
+  flex-direction: column;
+}
+.cred-item strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+}
+.cred-item span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+.eeat-badges p {
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.eeat-badges strong {
+  color: var(--primary);
+  font-weight: 600;
+}

@@ -1,6 +1,7 @@
 import { ArrowRight, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
-import { ADDRESS, CallButton, PHONE, SEO, locationSlug, locations, servicePages } from "../App";
+import { ADDRESS, CallButton, PHONE, SEO, locationSlug, locations } from "../App";
+import { servicePages } from "../data/services";
 
 function DirectoryServiceCard({ service }: { service: typeof servicePages[number] }) {
   const Icon = service.icon;
