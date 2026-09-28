@@ -7,12 +7,10 @@ import {
   ChevronDown,
   Clock3,
   Droplets,
-  Facebook,
   Flame,
   Gauge,
   Hammer,
   House,
-  Instagram,
   LocateFixed,
   Mail,
   MapPin,
@@ -25,11 +23,11 @@ import {
   Waves,
   Wrench,
   X,
-  Youtube,
 } from "lucide-react";
 import { useState } from "react";
 import Home from "./pages/Home";
 import { ServiceAreaDirectory, ServicesDirectory } from "./pages/Directory";
+import { ContactPage, WhyUsPage } from "./pages/Company";
 
 export const PHONE = "954-251-0364";
 export const PHONE_HREF = "tel:9542510364";
@@ -90,13 +88,13 @@ function Layout({ children }: { children: React.ReactNode }) {
         <Link href="/" onClick={() => setOpen(false)}>Home</Link>
         <div className="nav-dropdown"><button type="button">Services <ChevronDown size={15} /></button><div className="dropdown-menu"><Link href="/services" onClick={() => setOpen(false)}>All Plumbing Services <ArrowRight size={14} /></Link>{servicePages.slice(0, 6).map(service => <Link key={service.slug} href={`/${service.slug}`} onClick={() => setOpen(false)}>{service.title} <ArrowRight size={14} /></Link>)}</div></div>
         <div className="nav-dropdown"><button type="button">Service area <ChevronDown size={15} /></button><div className="dropdown-menu"><Link href="/service-area" onClick={() => setOpen(false)}>All Service Areas <ArrowRight size={14} /></Link><Link href="/plumber-weston-fl" onClick={() => setOpen(false)}>Weston, FL <ArrowRight size={14} /></Link>{locations.map(location => <Link key={location} href={`/plumber-${locationSlug(location)}`} onClick={() => setOpen(false)}>{location} <ArrowRight size={14} /></Link>)}</div></div>
-        <a href="/#why-us" onClick={() => setOpen(false)}>Why us</a><a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
+        <Link href="/why-us" onClick={() => setOpen(false)}>Why us</Link><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
         <CallButton className="nav-call">Call Now</CallButton>
       </nav>
       <button className="menu-toggle" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </div></header>
     <main>{children}</main>
-    <footer className="footer"><div className="container footer-grid"><div><Link href="/" className="brand footer-brand"><span className="brand-mark"><Wrench size={22} /></span><span><strong>Weston FL</strong><em>Plumber</em></span></Link><p>Local plumbing support for homes and businesses in Weston, Florida and surrounding communities.</p></div><div><h3>Services</h3><Link href="/services">All plumbing services</Link><Link href="/plumber-weston-fl">Plumbing service</Link><Link href="/emergency-plumber-weston-fl">Emergency plumbing</Link><Link href="/drain-cleaning-weston-fl">Drain cleaning</Link><Link href="/leak-detection-weston-fl">Leak detection</Link><Link href="/water-heater-repair-weston-fl">Water heaters</Link></div><div><h3>Service area</h3><Link href="/service-area">All service areas</Link><Link href="/plumber-weston-fl">Weston, FL</Link>{locations.map(loc => <Link key={loc} href={`/plumber-${locationSlug(loc)}`}>{loc}</Link>)}</div><div><h3>Get in touch</h3><a href={PHONE_HREF} className="footer-contact"><Phone size={16} /> {PHONE}</a><a href={`mailto:service@westonflplumber.com`} className="footer-contact"><Mail size={16} /> service@westonflplumber.com</a><p className="footer-address"><MapPin size={16} /> {ADDRESS}</p></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Weston FL Plumber</span><span>Official business website · Weston, Florida</span></div></footer>
+    <footer className="footer"><div className="container footer-grid"><div><Link href="/" className="brand footer-brand"><span className="brand-mark"><Wrench size={22} /></span><span><strong>Weston FL</strong><em>Plumber</em></span></Link><p>Local plumbing support for homes and businesses in Weston, Florida and surrounding communities.</p></div><div><h3>Services</h3><Link href="/services">All plumbing services</Link><Link href="/plumber-weston-fl">Plumbing service</Link><Link href="/emergency-plumber-weston-fl">Emergency plumbing</Link><Link href="/drain-cleaning-weston-fl">Drain cleaning</Link><Link href="/leak-detection-weston-fl">Leak detection</Link><Link href="/water-heater-repair-weston-fl">Water heaters</Link></div><div><h3>Company</h3><Link href="/why-us">Why choose us</Link><Link href="/contact">Contact the team</Link></div><div><h3>Service area</h3><Link href="/service-area">All service areas</Link><Link href="/plumber-weston-fl">Weston, FL</Link>{locations.map(loc => <Link key={loc} href={`/plumber-${locationSlug(loc)}`}>{loc}</Link>)}</div><div><h3>Get in touch</h3><a href={PHONE_HREF} className="footer-contact"><Phone size={16} /> {PHONE}</a><a href={`mailto:service@westonflplumber.com`} className="footer-contact"><Mail size={16} /> service@westonflplumber.com</a><p className="footer-address"><MapPin size={16} /> {ADDRESS}</p></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Weston FL Plumber</span><span>Official business website · Weston, Florida</span></div></footer>
     <a href={PHONE_HREF} className="mobile-call" aria-label={`Call Weston FL Plumber at ${PHONE}`}><Phone size={18} /><span>Call Now</span><b>{PHONE}</b></a>
   </div>;
 }
@@ -117,6 +115,6 @@ function LocationPage({ location }: { location: string }) { const city = locatio
 
 function NotFound() { return <div className="not-found"><span className="eyebrow">404</span><h1>That page has moved.</h1><p>Return to the Weston FL Plumber homepage to find the service you need.</p><Link href="/" className="btn-primary"><ArrowRight size={17} /> Back home</Link></div> }
 
-function Router() { return <Switch><Route path="/" component={Home} /><Route path="/services" component={ServicesDirectory} /><Route path="/service-area" component={ServiceAreaDirectory} />{servicePages.map(service => <Route key={service.slug} path={`/${service.slug}`}>{() => <ServicePage service={service} />}</Route>)}{locations.map(location => <Route key={location} path={`/plumber-${locationSlug(location)}`}>{() => <LocationPage location={location} />}</Route>)}<Route component={NotFound} /></Switch>; }
+function Router() { return <Switch><Route path="/" component={Home} /><Route path="/services" component={ServicesDirectory} /><Route path="/service-area" component={ServiceAreaDirectory} /><Route path="/why-us" component={WhyUsPage} /><Route path="/contact" component={ContactPage} />{servicePages.map(service => <Route key={service.slug} path={`/${service.slug}`}>{() => <ServicePage service={service} />}</Route>)}{locations.map(location => <Route key={location} path={`/plumber-${locationSlug(location)}`}>{() => <LocationPage location={location} />}</Route>)}<Route component={NotFound} /></Switch>; }
 
 export default function App() { return <Layout><Router /></Layout>; }
