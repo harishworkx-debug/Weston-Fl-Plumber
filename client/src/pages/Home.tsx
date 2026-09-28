@@ -3,7 +3,7 @@ import { ArrowRight, Bath, Check, ChevronDown, Clock3, Droplets, Flame, Gauge, H
 import { useState } from "react";
 import { ADDRESS, MAP_LINK, PHONE, PHONE_HREF, SEO, servicePages } from "../App";
 
-const areas = ["Weston", "Miramar", "Pembroke Pines", "Cooper City", "Southwest Ranches", "Davie"];
+const areas = ["Weston", "Miramar", "Pembroke Pines", "Cooper City", "Southwest Ranches", "Davie", "Plantation", "Sunrise", "Pembroke Park", "Hialeah"];
 const problems = ["Dripping or leaking fixtures", "Slow or backed-up drains", "No hot water", "Running or clogged toilets", "Low water pressure", "Unexplained moisture or odors", "Garbage disposal issues", "Pipe and supply line leaks"];
 
 function HomeFaq({ q, a }: { q: string; a: string }) { const [open, setOpen] = useState(false); return <div className={open ? "faq open" : "faq"}><button onClick={() => setOpen(!open)}><span>{q}</span><ChevronDown size={18} /></button>{open && <p>{a}</p>}</div>; }
