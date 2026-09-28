@@ -44,7 +44,7 @@ h2 { font-size: clamp(2rem, 3.5vw, 3.35rem); }
 h3 { font-size:1.1rem; letter-spacing:-.03em; }
 p { color:var(--muted); margin:0; }
 .hero { color:#fff; position:relative; min-height:680px; background:var(--navy); }
-.hero-bg { position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(7,25,36,.96) 0%, rgba(7,25,36,.76) 44%, rgba(7,25,36,.18) 100%), url('/manus-storage/weston-plumber-hero_53f4aa36.jpg'); background-size:cover; background-position:center; }
+.hero-bg { position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(7,25,36,.96) 0%, rgba(7,25,36,.76) 44%, rgba(7,25,36,.18) 100%), url('/assets/hero.jpg'); background-size:cover; background-position:center; }
 .hero-inner { min-height:610px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; padding-top:70px; padding-bottom:100px; }
 .hero-copy { max-width:760px; animation:rise .7s var(--ease) both; }
 .hero h1 { color:#fff; max-width:760px; margin:22px 0 25px; }
