@@ -32,8 +32,8 @@ import ServiceLocationPage from "./pages/ServiceLocation";
 import ServicePage from "./pages/ServicePage";
 import { servicePages } from "./data/services";
 
-export const PHONE = "954-251-0364";
-export const PHONE_HREF = "tel:9542510364";
+export const PHONE = "754-283-8022";
+export const PHONE_HREF = "tel:+17542838022";
 export const ADDRESS = "2645 Executive Park Drive, Weston, FL 33331";
 export const MAP_LINK = "https://maps.app.goo.gl/qDUEhqRhmaQgg3tJ7";
 
